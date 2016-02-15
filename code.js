@@ -39,9 +39,9 @@ window.onkeydown = function (e) {
         upKEY = false;
         dwnKEY = true;
     }
+};
 function gameLoop() {
 
-    };
     if (dwnKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and green color
         win();
     } else if (dwnKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(255, 102, 102)") { //down key with green color and red color
