@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <style>
+        body {
+            padding: 3em;
+            background-color: #444;
+            padding-bottom: 3em;
+        }
+
+        #game {
+            border: 2px solid #000;
+            width: 400px;
+            height: 400px;
+            padding: 1em;
+            margin-top: 2em;
+            background-color: orange;
+        }
+
+        #game * {
+            position: absolute;
+            box-shadow: 2px 2px 5px grey;
+        }
+
+        .block {
+            height: 100px;
+            width: 100px;
+            left: 310px;
+        }
+
+        .block.a {
+            background: #ff6666;
+        }
+
+        .block.b {
+            top: 325px;
+            background: #bada55;
+        }
+
+        #mainBLOCK {
+            height: 100px;
+            width: 100px;
+            background-color: #333;
+            top: 185px;
+            border-radius: 50px;
+        }
+
+        .score {
+            position: absolute;
+            color: cadetblue;
+            font-size: 10em;
+            top: 0.6em;
+            right: 0;
+            font-family: sans-serif;
+        }
+
+        .score p {
+            position: absolute;
+            color: cadetblue;
+            font-size: 2em;
+            top: -0.5em;
+            right: 0.5em;
+            font-family: sans-serif;
+        }
+
+        h1{
+          color:#fff;
+          font-family: sans-serif;
+        }
+
+        hr{
+          width:30%;
+        }
+
+        img{
+          position:absolute;
+          margin:0;
+          display:none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <title>SWipe | How fast can you go?</title>
+</head>
+
+<body>
+
+  <img src="testEDIT.gif"></img>
+
+    <div id="game">
+        <div class="block a" id="ba"></div>
+        <div class="block b" id="bb"></div>
+        <div id="mainBLOCK"></div>
+
+    </div>
+    <div class="score"><small>Score:</small>
+        <p id="scar">0</p>
+    </div>
+    <script src="code.js"></script>
+</body>
+
+</html>
