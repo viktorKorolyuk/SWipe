@@ -60,22 +60,17 @@ function randomChoice() {
 }
 
 function gameLoop() {
-
     window.onkeydown = function (e) {
         if (e.keyCode == "38") {
-
             upKEY = true;
             dwnKEY = false;
             //  console.log("pressed up key: " + dwnKEY);
             //  doAnim("up");
-
         } else if (e.keyCode == "40") {
-
             upKEY = false;
             dwnKEY = true;
             // console.log("pressed down key: " + dwnKEY);
             //   doAnim("down");
-
         }
     };
     if (dwnKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and green color
@@ -87,7 +82,6 @@ function gameLoop() {
     } else if (dwnKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and red color
         loose();
     }
-
     else if (upKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(255, 102, 102)") {
         win();
     } else if (upKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(186, 218, 85)") {
@@ -131,7 +125,7 @@ function loose() {
     console.log(score / seconds);
     if(show = true){
     alert("You played for " + seconds + " seconds. Also you have a " + avg +" blocks/sec");
-show = false;
+    show = false;
   }score = 0;
     scar.innerHTML = score;
     console.log("Lost");
