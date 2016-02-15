@@ -5,42 +5,15 @@ var bb = document.getElementById("bb");
 var ba = document.getElementById("ba");
 var upKEY = null;
 var dwnKEY = null;
-var x = 0;
-var y = 185;
-var dx = 5;
-var dy = 5;
 var time;
 var seconds = 0;
-var delay = 20;
 var randAns = [1, 2];
 var score = 0;
 var d = new Date();
 var orientation = ["1,2","2,1"];
 var show = true;
-function doAnim(s) {
-    y = 185;
-    if (s === "up") {
-        time = setInterval(function () {
-            y -= dy;
-            main.style.top = y + "px";
-            //  console.log(y);
-            if (y <= 20) {
-                main.style.top = "30px";
-                clearInterval(time);
-            }
-        }, delay);
-    } else if (s === "down") {
-        time = setInterval(function () {
-            y += dy;
-            main.style.top = y;
-            if (y >= 325) {
-                clearInterval(time);
-            }
-        }, delay);
-    }
-
-}
-
+var starttime = new Date().getTime();
+console.log(starttime);
 function randomChoice() {
     var rand = randAns[Math.floor(Math.random() * randAns.length)];
     var randOR = orientation[Math.floor(Math.random() * orientation.length)];
@@ -58,7 +31,6 @@ function randomChoice() {
     }
 
 }
-
 function gameLoop() {
     window.onkeydown = function (e) {
         if (e.keyCode == "38") {
@@ -91,54 +63,29 @@ function gameLoop() {
     } else if (upKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && ba.style.backgroundColor === "rgb(186, 218, 85)") {
         win();
     }
-
-
 }
 
 function win() {
     score += 1;
     scar.innerHTML = score;
-  //  console.log(score + " reseting now :)");
     upKEY = null;
     dwnKEY = null;
-    x = 0;
-    y = 185;
-    dx = 5;
-    dy = 5;
-    time;
     delay = 20;
-    andAns = [1, 2];
-
+    randAns = [1, 2];
     //now to reset the game
-
-    if (main.style.top != 185) {
-        main.style.top = 185 + "px";
-    }
-
     randomChoice();
 }
 
 function loose() {
-    var avg = (score / seconds) * 1;
-    console.log(seconds);
-    console.log(score);
-    console.log(score / seconds);
-    if(show = true){
-    alert("You played for " + seconds + " seconds. Also you have a " + avg +" blocks/sec");
+  var seconds = new Date().getTime() - starttime;
+    if(show){
+    alert("You played for " + seconds + " seconds. Also you have a " + (score / (seconds * 1000)) +" blocks/sec");
     show = false;
-  }score = 0;
-    scar.innerHTML = score;
-    console.log("Lost");
-    clearInterval(Timer);
+    }
     location.reload();
-  //  window.reload();
 }
 
 setInterval(function () {
     gameLoop();
 }, 100);
 randomChoice();
-var Timer = setInterval(function(){
-//  console.log(seconds);
-  seconds++;
-},1000);
