@@ -31,19 +31,16 @@ function randomChoice() {
     }
 
 }
+window.onkeydown = function (e) {
+    if (e.keyCode == "38") {
+        upKEY = true;
+        dwnKEY = false;
+    } else if (e.keyCode == "40") {
+        upKEY = false;
+        dwnKEY = true;
+    }
 function gameLoop() {
-    window.onkeydown = function (e) {
-        if (e.keyCode == "38") {
-            upKEY = true;
-            dwnKEY = false;
-            //  console.log("pressed up key: " + dwnKEY);
-            //  doAnim("up");
-        } else if (e.keyCode == "40") {
-            upKEY = false;
-            dwnKEY = true;
-            // console.log("pressed down key: " + dwnKEY);
-            //   doAnim("down");
-        }
+
     };
     if (dwnKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and green color
         win();
@@ -64,7 +61,6 @@ function gameLoop() {
         win();
     }
 }
-
 function win() {
     score += 1;
     scar.innerHTML = score;
@@ -72,10 +68,8 @@ function win() {
     dwnKEY = null;
     delay = 20;
     randAns = [1, 2];
-    //now to reset the game
     randomChoice();
 }
-
 function loose() {
   var seconds = new Date().getTime() - starttime;
     if(show){
