@@ -71,7 +71,7 @@ function win() {
 function loose() {
   var seconds = new Date().getTime() - starttime;
     if(show){
-    alert("You played for " + seconds + " seconds. Also you have a " + (score / (seconds * 1000)) +" blocks/sec");
+    alert("You played for " + seconds + " seconds. Also you have a " + (score / (seconds / 1000)) +" blocks/sec");
     show = false;
     }
     location.reload();
