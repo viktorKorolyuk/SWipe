@@ -41,7 +41,6 @@ window.onkeydown = function (e) {
     }
 };
 function gameLoop() {
-
     if (dwnKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and green color
         win();
     } else if (dwnKEY === true && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(255, 102, 102)") { //down key with green color and red color
@@ -50,8 +49,7 @@ function gameLoop() {
         win();
     } else if (dwnKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and red color
         loose();
-    }
-    else if (upKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(255, 102, 102)") {
+    }else if (upKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(255, 102, 102)") {
         win();
     } else if (upKEY === true && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(186, 218, 85)") {
         loose();
@@ -78,7 +76,6 @@ function loose() {
     }
     location.reload();
 }
-
 setInterval(function () {
     gameLoop();
 }, 100);
