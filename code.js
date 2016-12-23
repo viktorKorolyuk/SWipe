@@ -47,8 +47,15 @@ $(document).keyup(function (e) {
 
 });
 
+top_b.onclick = function () {
+    check(38);
+};
+bottom.onclick = function () {
+    check(40);
+};
+
 randomize();
-//hack();
+
 
 function hack() {
     setInterval(function () {
