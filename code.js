@@ -1,14 +1,20 @@
 var top_b = document.getElementById("top");
 var bottom = document.getElementById("bottom");
 var subject = document.getElementById("subject");
-console.log(bottom);
 var colorsc = {
     38: "",
     40: ""
 };
 var score = 0;
+var colors = ["rgb(255, 237, 102)", "rgb(186, 218, 85)", "rgb(75, 204, 220)"];
 
-var colors = ["rgb(255, 102, 102)", "rgb(186, 218, 85)", "rgb(102, 102, 255)"];
+top_b.onclick = function () {
+    check(38);
+};
+bottom.onclick = function () {
+    check(40);
+};
+
 var randomize = function () {
     var wheight = colors[Math.floor(Math.random() * colors.length)];
     var wheight2 = colors[Math.floor(Math.random() * colors.length)];
@@ -27,45 +33,51 @@ var randomize = function () {
 
 var check = function (key) {
     if (colorsc[key] === subject.style.backgroundColor) {
-        console.log("you got it right!");
         score++;
         randomize();
+        if (r <= 245) {
+            r = g = b = Math.floor(b * 1.05) + 1;
+        }
     } else {
-        console.log("you got it wrong.");
         score = 0;
+        r = g = b = Math.floor(b * 0.5);
 
     }
     $("#score").text(`Score: ${score}`);
 };
 
+
 $(document).keyup(function (e) {
     console.log(e.keyCode);
     if (colorsc[e.keyCode] === undefined) return;
     check(e.keyCode);
-    randomize();
-
-
+    //randomize();
 });
-
-top_b.onclick = function () {
-    check(38);
-};
-bottom.onclick = function () {
-    check(40);
-};
-
 randomize();
-
+//hack();
 
 function hack() {
     setInterval(function () {
-
         if (subject.style.backgroundColor === top_b.style.backgroundColor) {
-            console.log("select up.");
+            //  console.log("select up.");
             check(38);
         } else if (subject.style.backgroundColor === bottom.style.backgroundColor) {
-            console.log("select down.");
+            //  console.log("select down.");
             check(40);
         }
-    }, 1);
+    }, 100);
 }
+
+var r = 245,
+    g = 245,
+    b = 245;
+/**
+setInterval(function () {
+if (r <= 0) return;
+r--;
+g--;
+b--;
+document.body.style.color = `rgb(${245 - r}, ${245 - g}, ${245 - b})`
+document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+}, 500);
+*/

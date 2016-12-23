@@ -2,6 +2,8 @@ body {
     font-family: sans-serif;
     text-align: center;
     margin: 0em;
+    background-color: #000;
+    color: white;
 }
 
 body h1,
@@ -12,17 +14,19 @@ h3 {
 
 h1 {
     font-size: 2em;
+    font-weight: 200;
 }
 
 h2 {
     font-size: 1em;
     font-weight: 100;
+    font-family: serif;
 }
 
 hr {
     border-width: 1px;
     border-style: solid;
-    border-color: #000;
+    border-color: #fff;
     width: 30%;
 }
 
@@ -44,6 +48,12 @@ hr {
     display: inline-block;
 }
 
+#top,
+#bottom {
+    width: 10em;
+    height: 10em;
+}
+
 #top {
     background-color: #ff6666;
 }
@@ -54,7 +64,8 @@ hr {
 
 .box#subject {
     position: relative;
-    top: -6em;
+    top: -5.0em;
+    border-width: 1em;
 }
 
 .score {
