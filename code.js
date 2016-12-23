@@ -29,11 +29,13 @@ var check = function (key) {
     if (colorsc[key] === subject.style.backgroundColor) {
         console.log("you got it right!");
         score++;
+        randomize();
     } else {
         console.log("you got it wrong.");
         score = 0;
 
     }
+    $("#score").text(`Score: ${score}`);
 };
 
 $(document).keyup(function (e) {
@@ -41,8 +43,22 @@ $(document).keyup(function (e) {
     if (colorsc[e.keyCode] === undefined) return;
     check(e.keyCode);
     randomize();
-    $("#score").text(`Score: ${score}`);
+
 
 });
 
 randomize();
+//hack();
+
+function hack() {
+    setInterval(function () {
+
+        if (subject.style.backgroundColor === top_b.style.backgroundColor) {
+            console.log("select up.");
+            check(38);
+        } else if (subject.style.backgroundColor === bottom.style.backgroundColor) {
+            console.log("select down.");
+            check(40);
+        }
+    }, 1);
+}
