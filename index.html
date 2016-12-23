@@ -1,108 +1,19 @@
 <html>
 
 <head>
-    <style>
-        body {
-            padding: 5em;
-            background-color: #444;
-
-        }
-
-        #game {
-            border: 2px solid #000;
-            width: 400px;
-            height: 400px;
-            padding: 1em;
-            margin-top: 2em;
-            background-color: orange;
-        }
-
-        #game * {
-            position: absolute;
-            box-shadow: 2px 2px 5px grey;
-        }
-
-        .block {
-            height: 100px;
-            width: 100px;
-            left: 380px;
-        }
-
-        .block.a {
-            background: #ff6666;
-        }
-
-        .block.b {
-            top: 500px;
-            background: #bada55;
-        }
-
-        #mainBLOCK {
-            height: 100px;
-            width: 100px;
-            background-color: #333;
-            top: 350px;
-            border-radius: 50px;
-        }
-
-        .score {
-            position: absolute;
-            color: cadetblue;
-            font-size: 10em;
-            top: 1em;
-            right: 0;
-            font-family: sans-serif;
-        }
-
-        .score p {
-            position: absolute;
-            color: cadetblue;
-            font-size: 2em;
-            top: -0.5em;
-            right: 0.5em;
-            font-family: sans-serif;
-        }
-
-        h1{
-          color:#fff;
-          font-family: sans-serif;
-        }
-
-        hr{
-          width:30%;
-        }
-
-        img{
-          position:absolute;
-          margin:-2em;
-          top: 2em;
-          width: 1100px;
-          right: 0;
-
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="code.js"></script>
     <title>SWipe | How fast can you go?</title>
 </head>
 
 <body>
-
-  <img src="testEDIT.gif"></img>
-<br>
-<br>
-<br>
-<br>
-    <div id="game">
-        <div class="block a" id="ba"></div>
-        <div class="block b" id="bb"></div>
-        <div id="mainBLOCK"></div>
+    <div class="gamearea">
+        <box class="a" />
+        <box class="b" />
 
     </div>
-    <div class="score"><small>Score:</small>
-        <p id="scar">0</p>
-    </div>
-    <script src="code.js"></script>
 </body>
 
 </html>
