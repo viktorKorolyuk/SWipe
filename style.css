@@ -1,0 +1,54 @@
+body {
+    font-family: sans-serif;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin: 0em;
+}
+
+body h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+body h1 {
+    font-size: 5em;
+}
+
+.gamearea {
+    width: 100%;
+    background-color: #fff;
+    color: black;
+}
+
+.align-left-tb {
+    display: inline-block;
+}
+
+.box {
+    background-color: black;
+    color: white;
+    width: 5em;
+    height: 5em;
+    text-align: center;
+    margin: 1em;
+    display: inline-block;
+}
+
+.box#top {
+    background-color: #ff6666;
+}
+
+.box#bottom {
+    background-color: #bada55;
+}
+
+.box#subject {
+    position: relative;
+    top: -3.5em;
+}
+
+footer {
+    text-align: center;
+}
