@@ -7,7 +7,7 @@ var colorsc = {
 };
 var score = 0;
 var colors = ["rgb(255, 237, 102)", "rgb(186, 218, 85)", "rgb(75, 204, 220)"];
-
+var ranTIMES = [2500, 1000, 2000, 5000, 3000, 1000, 5000];
 top_b.onclick = function () {
     check(38);
 };
@@ -54,7 +54,10 @@ $(document).keyup(function (e) {
     //randomize();
 });
 randomize();
-//hack();
+
+hack();
+
+
 
 function hack() {
     setInterval(function () {
@@ -65,7 +68,7 @@ function hack() {
             //  console.log("select down.");
             check(40);
         }
-    }, 100);
+    }, ranTIMES[Math.floor(Math.random() * ranTIMES.length)]);
 }
 
 var timer = 30;
@@ -74,4 +77,8 @@ setInterval(function () {
     timer -= 0.01;
     x[0].style.width = `${timer}%`;
     x[1].style.width = `${timer}%`;
+    if (timer < 0) {
+        alert("you loose. reloading page due to developer laziness.");
+        location.reload();
+    }
 }, 0.1);
