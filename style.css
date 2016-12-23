@@ -23,7 +23,7 @@ h2 {
     font-family: serif;
 }
 
-hr {
+.timer {
     border-width: 1px;
     border-style: solid;
     border-color: #fff;

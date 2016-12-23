@@ -35,12 +35,12 @@ var check = function (key) {
     if (colorsc[key] === subject.style.backgroundColor) {
         score++;
         randomize();
-        if (r <= 245) {
-            r = g = b = Math.floor(b * 1.05) + 1;
-        }
+
+        timer = timer * 1.15 + 1;
+        if (timer >= 30) timer = 30;
     } else {
         score = 0;
-        r = g = b = Math.floor(b * 0.5);
+        alert("you loose.");
 
     }
     $("#score").text(`Score: ${score}`);
@@ -68,16 +68,10 @@ function hack() {
     }, 100);
 }
 
-var r = 245,
-    g = 245,
-    b = 245;
-/**
+var timer = 30;
 setInterval(function () {
-if (r <= 0) return;
-r--;
-g--;
-b--;
-document.body.style.color = `rgb(${245 - r}, ${245 - g}, ${245 - b})`
-document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-}, 500);
-*/
+    var x = document.getElementsByClassName("timer");
+    timer -= 0.01;
+    x[0].style.width = `${timer}%`;
+    x[1].style.width = `${timer}%`;
+}, 0.1);
