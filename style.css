@@ -45,11 +45,11 @@ hr {
     display: inline-block;
 }
 
-.box#top {
+#top {
     background-color: #ff6666;
 }
 
-.box#bottom {
+#bottom {
     background-color: #bada55;
 }
 

@@ -1,82 +1,47 @@
-var game = document.getElementById("game");
-var scar = document.getElementById("scar");
-var main = document.getElementById("mainBLOCK");
-var bb = document.getElementById("bb");
-var ba = document.getElementById("ba");
-var KEYdir = null;
-var time;
-var seconds = 0;
-var randAns = [1, 2];
+var top_b = document.getElementById("top");
+var bottom = document.getElementById("bottom");
+var subject = document.getElementById("subject");
+console.log(bottom);
+var colorsc = {
+    38: "",
+    40: ""
+};
 var score = 0;
-var d = new Date();
-var orientation = ["1,2","2,1"];
-var show = true;
-var starttime;
-click=true;
-console.log(starttime);
-function randomChoice() {
-    var rand = randAns[Math.floor(Math.random() * randAns.length)];
-    var randOR = orientation[Math.floor(Math.random() * orientation.length)];
-    if (rand === 1) {
-        main.style.backgroundColor = "rgb(186, 218, 85)";
-    } else if (rand === 2) {
-        main.style.backgroundColor = "rgb(255, 102, 102)";
-    }
-    if(randOR === "1,2"){
-      document.getElementById("ba").style.backgroundColor = "rgb(255, 102, 102)";
-      document.getElementById("bb").style.backgroundColor = "rgb(186, 218, 85)";
-    } else if (randOR == "2,1") {
-      document.getElementById("bb").style.backgroundColor = "rgb(255, 102, 102)";
-      document.getElementById("ba").style.backgroundColor = "rgb(186, 218, 85)";
-    }
 
-}
-window.onkeydown = function (e) {
-  if(click){new Date().getTime();click=false;}
-    if (e.keyCode == "38") {
-        KEYdir = 1;
-    } else if (e.keyCode == "40") {
-        KEYdir = 0;
+var colors = ["rgb(255, 102, 102)", "rgb(186, 218, 85)", "rgb(102, 102, 255)"];
+var randomize = function () {
+    var wheight = colors[Math.floor(Math.random() * colors.length)];
+    var wheight2 = colors[Math.floor(Math.random() * colors.length)];
+    var opt = [];
+    opt.push(wheight);
+    opt.push(wheight2);
+    while (wheight2 === wheight) {
+        wheight2 = colors[Math.floor(Math.random() * colors.length)]; //make sure the value is never the same as the first one.
+    }
+    colorsc[38] = wheight;
+    colorsc[40] = wheight2;
+    top_b.style.backgroundColor = colorsc[38];
+    bottom.style.backgroundColor = colorsc[40];
+    subject.style.backgroundColor = opt[Math.floor(Math.random() * opt.length)];
+};
+
+var check = function (key) {
+    if (colorsc[key] === subject.style.backgroundColor) {
+        console.log("you got it right!");
+        score++;
+    } else {
+        console.log("you got it wrong.");
+        score = 0;
 
     }
 };
-function gameLoop() {
-    if (KEYdir === 0 && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and green color
-        win();
-    } else if (KEYdir === 0 && main.style.backgroundColor === "rgb(186, 218, 85)" && bb.style.backgroundColor === "rgb(255, 102, 102)") { //down key with green color and red color
-        loose();
-    } else if (KEYdir === 0 && main.style.backgroundColor === "rgb(255, 102, 102)" && bb.style.backgroundColor === "rgb(255, 102, 102)") { //down key with green color and red color
-        win();
-    } else if (KEYdir === 0 && main.style.backgroundColor === "rgb(255, 102, 102)" && bb.style.backgroundColor === "rgb(186, 218, 85)") { //down key with green color and red color
-        loose();
-    }else if (KEYdir === 1 && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(255, 102, 102)") {
-        win();
-    } else if (KEYdir === 1 && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(186, 218, 85)") {
-        loose();
-    }else if (KEYdir === 1 && main.style.backgroundColor === "rgb(255, 102, 102)" && ba.style.backgroundColor === "rgb(186, 218, 85)") {
-        loose();
-    } else if (KEYdir === 1 && main.style.backgroundColor === "rgb(186, 218, 85)" && ba.style.backgroundColor === "rgb(186, 218, 85)") {
-        win();
-    }
-}
-function win() {
-    starttime = null;
-    score += 1;
-    scar.innerHTML = score;
-    KEYdir = null;
-    delay = 20;
-    randAns = [1, 2];
-    randomChoice();
-}
-function loose() {
-  var seconds = new Date().getTime() - starttime;
-    if(show){
-    alert("You played for " + seconds + " seconds. Also you have a " + (score / (seconds / 1000)) +" blocks/sec");
-    show = false;
-    }
-    location.reload();
-}
-setInterval(function () {
-    gameLoop();
-}, 100);
-randomChoice();
+
+$(document).keydown(function (e) {
+    console.log(e.keyCode);
+    check(e.keyCode);
+    randomize();
+    $("#score").text(`Score: ${score}`);
+
+});
+
+randomize();
