@@ -36,8 +36,9 @@ var check = function (key) {
     }
 };
 
-$(document).keydown(function (e) {
+$(document).keyup(function (e) {
     console.log(e.keyCode);
+    if (colorsc[e.keyCode] === undefined) return;
     check(e.keyCode);
     randomize();
     $("#score").text(`Score: ${score}`);
