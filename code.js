@@ -55,7 +55,7 @@ $(document).keyup(function (e) {
 });
 randomize();
 
-hack();
+//hack();
 
 
 
