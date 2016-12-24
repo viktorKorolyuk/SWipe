@@ -8,6 +8,9 @@ var colorsc = {
 var score = 0;
 var colors = ["rgb(255, 237, 102)", "rgb(186, 218, 85)", "rgb(75, 204, 220)"];
 var ranTIMES = [2500, 1000, 2000, 5000, 3000, 1000, 5000];
+var timewait = 0.01;
+var timer = 30;
+
 top_b.onclick = function () {
     check(38);
 };
@@ -36,11 +39,14 @@ var check = function (key) {
         score++;
         randomize();
 
-        timer = timer * 1.15 + 1;
+        timer = timer * 1.15 + 1; //add a bit to the timer
+        timewait = timewait + 0.0005;
         if (timer >= 30) timer = 30;
     } else {
         score = 0;
         alert("You have lost. Resetting.");
+        timewait = 0.01;
+        timer = 30;
 
     }
     $("#score").text(`Score: ${score}`);
@@ -69,17 +75,18 @@ function hack() {
             check(40);
         }
     }, ranTIMES[Math.floor(Math.random() * ranTIMES.length)]);
+    //ranTIMES[Math.floor(Math.random() * ranTIMES.length)]
 }
 
-var timer = 30;
 setInterval(function () {
     var x = document.getElementsByClassName("timer");
-    timer -= 0.01;
+    timer -= timewait;
     x[0].style.width = `${timer}%`;
     x[1].style.width = `${timer}%`;
     if (timer < 0) {
         alert("You have lost. Resetting.");
         timer = 30;
+        timewait = 0.01;
         score = 0;
         $("#score").text(`Score: ${score}`);
     }
