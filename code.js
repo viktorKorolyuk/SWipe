@@ -79,6 +79,8 @@ setInterval(function () {
     x[1].style.width = `${timer}%`;
     if (timer < 0) {
         alert("you loose. reloading page due to developer laziness.");
-        location.reload();
+        timer = 30;
+        score = 0;
+        $("#score").text(`Score: ${score}`);
     }
 }, 0.1);
