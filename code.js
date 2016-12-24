@@ -40,7 +40,7 @@ var check = function (key) {
         if (timer >= 30) timer = 30;
     } else {
         score = 0;
-        alert("you loose.");
+        alert("You have lost. Resetting.");
 
     }
     $("#score").text(`Score: ${score}`);
@@ -78,7 +78,7 @@ setInterval(function () {
     x[0].style.width = `${timer}%`;
     x[1].style.width = `${timer}%`;
     if (timer < 0) {
-        alert("you loose. reloading page due to developer laziness.");
+        alert("You have lost. Resetting.");
         timer = 30;
         score = 0;
         $("#score").text(`Score: ${score}`);
