@@ -6,7 +6,7 @@ body {
     color: #fff;
 }
 
-body h1,
+h1,
 h2,
 h3 {
     text-align: center;
@@ -23,20 +23,23 @@ h2 {
     font-family: serif;
 }
 
-h3 {
+p {
     font-weight: 100;
     font-size: .9em;
 }
-button{
-  background-color : white;
-  border : none;
-  padding:1em;
-  color:black;
+
+button {
+    background-color: white;
+    border: none;
+    padding: 1em;
+    color: black;
 }
-button:hover{
-  background-color:grey;
-  color:white;
+
+button:hover {
+    background-color: grey;
+    color: white;
 }
+
 .timer {
     border-width: 1px;
     border-style: solid;
@@ -60,12 +63,6 @@ button:hover{
     text-align: center;
     margin: 1em;
     display: inline-block;
-}
-
-#top,
-#bottom {
-    width: 10em;
-    height: 10em;
 }
 
 #top {
