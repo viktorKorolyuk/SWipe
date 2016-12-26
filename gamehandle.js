@@ -1,8 +1,8 @@
 //custom game handler class to ease development
 //I am using an MDN recomended format of coding, in which I define the methods externaly to make it easier to read. I personaly do not like this method as it increases the length of the page, but alas, if I don't...
-function GameHandle() {}
+var GameHandle = {}
 
-GameHandle.prototype.loose = function () {
+GameHandle.loose = function () {
     alert(`You have lost with a score of : ${score}. Stopping game.`);
     score = 0;
     timewait = 0.01;
@@ -13,7 +13,7 @@ GameHandle.prototype.loose = function () {
     scoreElem.innerHTML = `Score: ${score}`;
 }
 
-GameHandle.prototype.check = function (key) {
+GameHandle.check = function (key) {
     if (colorsc[key] === subject.style.backgroundColor) {
         score++;
         this.randomize();
@@ -28,7 +28,7 @@ GameHandle.prototype.check = function (key) {
 
 //setting the randomize function up for later use.
 //The methods do not require inputs because the variables are global in code.js.
-GameHandle.prototype.randomize = function () {
+GameHandle.randomize = function () {
     var wheight = colors[Math.floor(Math.random() * colors.length)];
     var wheight2 = colors[Math.floor(Math.random() * colors.length)];
     var opt = [];
@@ -42,4 +42,15 @@ GameHandle.prototype.randomize = function () {
     top_b.style.backgroundColor = colorsc[38];
     bottom.style.backgroundColor = colorsc[40];
     subject.style.backgroundColor = opt[Math.floor(Math.random() * opt.length)];
+}
+
+//a bot to run the game whilist I am too lazy to play.
+GameHandle.hack = function () {
+    setInterval(function () {
+        if (subject.style.backgroundColor === top_b.style.backgroundColor) {
+            gh.check(38);
+        } else if (subject.style.backgroundColor === bottom.style.backgroundColor) {
+            gh.check(40);
+        }
+    }, 1);
 }

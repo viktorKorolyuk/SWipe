@@ -2,7 +2,7 @@
  * Made by Viktor Korolyuk.
  * Copyright blahblahblah,... viktor add info here.
  */
-var gh = new GameHandle();
+var gh = GameHandle;
 var top_b = document.getElementById("top");
 var bottom = document.getElementById("bottom");
 var butint = document.getElementById("gameres");
@@ -39,17 +39,6 @@ function startgame() {
     } else {
         gh.loose();
     }
-}
-
-//a bot to run the game whilist I am too lazy to play.
-var hack = function () {
-    setInterval(function () {
-        if (subject.style.backgroundColor === top_b.style.backgroundColor) {
-            gh.check(38);
-        } else if (subject.style.backgroundColor === bottom.style.backgroundColor) {
-            gh.check(40);
-        }
-    }, 1);
 }
 
 
