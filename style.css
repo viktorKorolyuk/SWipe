@@ -6,12 +6,6 @@ body {
     color: #fff;
 }
 
-h1,
-h2,
-h3 {
-    text-align: center;
-}
-
 h1 {
     font-size: 2em;
     font-weight: 200;
@@ -85,6 +79,7 @@ button:hover {
 
 footer {
     text-align: center;
+    font-size: 0.5em;
 }
 
 @media screen and (max-width: 400px) {
