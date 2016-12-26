@@ -41,7 +41,6 @@ function startgame() {
     }
 }
 
-
 //Setting up the listeners.
 document.onkeyup = function (e) {
     console.log(e.keyCode);
@@ -49,9 +48,11 @@ document.onkeyup = function (e) {
     gh.check(e.keyCode);
 };
 top_b.onclick = function () {
+    if (!started) startgame();
     gh.check(38);
 };
 bottom.onclick = function () {
+    if (!started) startgame();
     gh.check(40);
 };
 //when this code is loaded, run randomize to make sure its always "random"... hehehe... small jokes are always funny.

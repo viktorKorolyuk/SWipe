@@ -14,6 +14,7 @@ GameHandle.loose = function () {
 }
 
 GameHandle.check = function (key) {
+    if (!started) return;
     if (colorsc[key] === subject.style.backgroundColor) {
         score++;
         this.randomize();
