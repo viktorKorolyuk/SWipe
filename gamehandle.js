@@ -1,5 +1,3 @@
-//custom game handler class to ease development
-//I am using an MDN recomended format of coding, in which I define the methods externaly to make it easier to read. I personaly do not like this method as it increases the length of the page, but alas, if I don't...
 var GameHandle = {}
 
 GameHandle.loose = function () {
