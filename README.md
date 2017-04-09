@@ -1,4 +1,9 @@
-<h1>SWipe</h1>
-Upon entering SWipe you will find yourself in a crappy CSS environment. You are now tasked to continue the lifeforce the developer has so generously given you.
-<h3>Created by Viktor Korolyuk</h3>
+#SWipe
 
+As your browser loads the webpage, you find a poorly designed webpage.
+You notice a start button at the top of the page.
+To your suprise, when you click the button, a timer begins to count down.
+Everytime you click a correct key on the webpage, the timer gets pushed back.
+-but it counts down faster each time
+
+You begin to 
