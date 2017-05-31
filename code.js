@@ -15,8 +15,8 @@ var started = false;
 var gameLoop; //setting an empty variable to represent the gameloop lateron.
 var colors = [
     "rgb(255, 237, 102)",
-    "rgb(186, 218, 85)",
-    "rgb(75, 204, 220)"
+    "rgb(76, 173, 214)",
+    "rgb(245, 40, 55)"
 ];
 var colorsc = {
     38: "",

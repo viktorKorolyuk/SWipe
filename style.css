@@ -1,18 +1,21 @@
 body {
+    margin-top: 4vh;
     font-family: sans-serif;
     text-align: center;
-    margin: 0em;
-    background-color: #111;
     color: #fff;
+
+    background: #222;
+    transition: background 0.5s;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 6vh;
     font-weight: 200;
+    transition: font-size 1s;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 2.5vh;
     font-weight: 100;
     font-family: serif;
 }
@@ -43,6 +46,8 @@ button:hover {
 
 .gamearea {
     width: 100%;
+    opacity: 1;
+    transition: opacity .5s;
 }
 
 .align-left-tb {
@@ -79,12 +84,27 @@ button:hover {
 
 footer {
     text-align: center;
-    font-size: 0.5em;
+    font-size: 2vh;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     body {
-        background-color: black;
-        color: white;
+        background: white;
+        color: #333;
+        font-size: 1em;
+    }
+    h1{
+      font-size: 2em;
+    }
+    h2{
+      font-size: 1.3em;
+    }
+    button{
+      font-size: 3vh;
+      color: crimson;
+      background: crimson;
+    }
+    .gamearea {
+      opacity: 0;
     }
 }
