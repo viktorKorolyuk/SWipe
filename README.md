@@ -1,9 +1,8 @@
-<h1>SWipe</h1>
+# SWipe
 
-As your browser loads the webpage, you find a poorly designed ui.<br>
-You notice a start button at the top of the page.<br>
-Out of sheer curiosity you click the button. A timer begins to count down.<br>
-Panicked, you read the instructions at the top of the page and begin to play.
-Everytime you click a correct key on the webpage, the timer gets pushed back; but everytime is decreases by shorter and shorter factors.<br>
-
-You grow tired of the game and close the window, searching for a new source of entertainment in the beautiful world of the internet.
+<i>As your browser loads the webpage, you find yourself faced with a dusty-black background containing instructions and a white button with text indicating it will start something.<br>
+You read the vauge instructions and press the white button. Immediately, two white thin bars begin to slowly decrease in longness.<br>
+Following the instructions, you match the left-most coloured square to the square matching its color on the direct right of the first square using your arrow keys.<br>
+As you progress through the game, you notice that the thin-white bars increase their compression speed each time you accumulate points.<br>
+Soon the compression speed becomes so large that it's impossible for you to continue past a certain amount. <br>
+As you realize the game is designed to be impossible, you have less desire to play it. You close the window, and search for a new source of entertainment in the beautiful world of the internet.</i>
