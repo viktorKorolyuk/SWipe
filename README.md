@@ -17,5 +17,5 @@ Soon the compression speed becomes so large that it's impossible for you to cont
 In essence, all the application does is generate three random numbers and assigns them to their respective boxes.
 
 ## TODO
-[x] Create game optimized for mobile/small devices
-[ ] Change UI for desktop/non-mobile devices
+- [ ] Create game optimized for mobile/small devices
+- [ ] Change UI for desktop/non-mobile devices
