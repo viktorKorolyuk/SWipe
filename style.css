@@ -1,116 +1,118 @@
 body {
-    margin-top: 3vh;
-    font-family: sans-serif;
-    text-align: center;
-    color: #fff;
-
-    background: #222;
-    transition: background 0.5s;
+  margin-top: 3vh;
+  font-family: sans-serif;
+  text-align: center;
+  color: #fff;
+  background: #222;
+  transition: background 0.5s;
 }
 
 h1 {
-    font-size: 6vh;
-    font-weight: 200;
-    transition: font-size 1s;
+  font-size: 6vh;
+  font-weight: 200;
+  transition: font-size 1s;
 }
 
 h2 {
-    font-size: 2.5vh;
-    font-weight: 100;
-    font-family: serif;
+  font-size: 2.5vh;
+  font-weight: 100;
+  font-family: serif;
 }
 
 p {
-    font-weight: 100;
-    font-size: .9em;
+  font-weight: 100;
+  font-size: .9em;
 }
 
 button {
-    background-color: white;
-    border: none;
-    padding: 1em;
-    color: black;
+  background-color: white;
+  border: none;
+  padding: 1em;
+  color: black;
 }
 
 button:hover {
-    background-color: grey;
-    color: white;
+  background-color: grey;
+  color: white;
 }
 
 .timer {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #fff;
-    width: 30%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff;
+  width: 30%;
 }
 
 .gamearea {
-    width: 100%;
+  width: 100%;
 }
 
 .align-left-tb {
-    display: inline-block;
+  display: inline-block;
 }
 
 .box {
-    background-color: black;
-    color: white;
-    width: 20vh;
-    height: 20vh;
-    text-align: center;
-    margin: 1em;
-    display: inline-block;
+  background-color: black;
+  color: white;
+  width: 20vh;
+  height: 20vh;
+  text-align: center;
+  margin: 1em;
+  display: inline-block;
 }
 
 #top {
-    background-color: #ff6666;
+  background-color: #ff6666;
 }
 
 #bottom {
-    background-color: #bada55;
+  background-color: #bada55;
 }
 
 .box#subject {
-    position: relative;
-    top: -5.0em;
-    border-width: 1em;
+  position: relative;
+  top: -5.0em;
+  border-width: 1em;
 }
 
 .score {
-    font-size: 1em;
+  font-size: 1em;
+}
+
+.GameDissallow {
+  display: none;
 }
 
 footer {
-    text-align: center;
-    font-size: 2vh;
-    
+  text-align: center;
+  font-size: 2vh;
 }
 
 @media screen and (max-width: 450px) {
-    body {
-        background: white;
-        color: #333;
-        font-size: 1em;
-    }
-    h1{
-      font-size: 2em;
-    }
-    h2{
-      font-size: 1.3em;
-    }
-    button{
-      font-size: 3vh;
-      color: crimson;
-      background: crimson;
-    }
-    .gamearea {
-      display: none;
-    }
-    .GameAllow {
-      display: none;
-      opacity: 0;
-    }
-    .GameDissallow {
-      display: block;
-    }
+  body {
+    background: white;
+    color: #333;
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  button {
+    font-size: 3vh;
+    color: crimson;
+    background: crimson;
+  }
+  .gamearea {
+    display: none;
+  }
+  .GameAllow {
+    display: none;
+    opacity: 0;
+  }
+  .GameDissallow {
+    display: block;
+  }
 }
